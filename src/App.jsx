@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import Home from "./pages/Home";
-import Products from "./pages/Products";
 import Product from "./pages/Product";
+import Checkout from "./pages/Checkout"; // Import the Checkout Page
 import ContactPage from "./pages/ContactPage";
 
 function App() {
@@ -12,8 +12,8 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
           <Route path="/product/:id" element={<Product />} />
+          <Route path="/cart" element={<Checkout />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </Layout>

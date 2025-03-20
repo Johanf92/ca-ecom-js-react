@@ -9,6 +9,7 @@ function Product() {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [quantity, setQuantity] = useState(1);
+  const [cartMessage, setCartMessage] = useState("");
 
   useEffect(() => {
     async function fetchProduct() {
@@ -34,7 +35,29 @@ function Product() {
   };
 
   const handleAddToCart = () => {
-    console.log(`Added ${quantity} of ${product.title} to cart`);
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const item = {
+      id: product.id,
+      title: product.title,
+      price: product.discountedPrice,
+      quantity,
+    };
+
+    // Check if item is already in the cart
+    const existingItemIndex = cart.findIndex(
+      (cartItem) => cartItem.id === product.id
+    );
+    if (existingItemIndex >= 0) {
+      cart[existingItemIndex].quantity += quantity;
+    } else {
+      cart.push(item);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    setCartMessage(`${quantity} x ${product.title} added to cart!`);
+
+    // Hide message after 3 seconds
+    setTimeout(() => setCartMessage(""), 3000);
   };
 
   if (isLoading)
@@ -80,7 +103,12 @@ function Product() {
             >
               -
             </button>
-            <span className="text-lg font-semibold">{quantity}</span>
+            <input
+              type="number"
+              value={quantity}
+              onChange={(e) => setQuantity(Math.max(1, Number(e.target.value)))}
+              className="w-12 text-center border rounded-lg"
+            />
             <button
               onClick={() => handleQuantityChange(1)}
               className="px-3 py-2 bg-gray-200 text-gray-700 rounded-lg"
@@ -96,10 +124,15 @@ function Product() {
             Add to Cart
           </button>
 
+          {/* Cart Message */}
+          {cartMessage && (
+            <p className="mt-2 text-green-500 font-semibold">{cartMessage}</p>
+          )}
+
           {/* Reviews Section */}
           <h3 className="text-xl font-semibold mt-6">Reviews:</h3>
           {product.reviews.length > 0 ? (
-            <ul className="mt-2">
+            <ul className="mt-2 space-y-2">
               {product.reviews.map((review) => (
                 <li key={review.id} className="border-t py-2">
                   <p>

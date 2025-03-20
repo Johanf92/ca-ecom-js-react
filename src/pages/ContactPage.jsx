@@ -10,7 +10,6 @@ const ContactPage = () => {
 
   const [errors, setErrors] = useState({});
 
-  // Handles input change for all fields
   const onInputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevState) => ({
@@ -19,7 +18,6 @@ const ContactPage = () => {
     }));
   };
 
-  // Form validation function
   const validateForm = () => {
     let newErrors = {};
     if (formData.fullName.trim().length < 3) {
@@ -39,7 +37,6 @@ const ContactPage = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  // Handles form submission
   const onFormSubmit = (event) => {
     event.preventDefault();
     if (validateForm()) {
@@ -56,7 +53,6 @@ const ContactPage = () => {
           Contact Us
         </h2>
         <form onSubmit={onFormSubmit} className="space-y-4">
-          {/* Full Name */}
           <div>
             <label
               htmlFor="fullName"
@@ -77,7 +73,6 @@ const ContactPage = () => {
             )}
           </div>
 
-          {/* Subject */}
           <div>
             <label
               htmlFor="subject"
@@ -98,7 +93,6 @@ const ContactPage = () => {
             )}
           </div>
 
-          {/* Email */}
           <div>
             <label
               htmlFor="email"
@@ -119,7 +113,6 @@ const ContactPage = () => {
             )}
           </div>
 
-          {/* Message Body */}
           <div>
             <label htmlFor="body" className="block text-gray-700 font-semibold">
               Message
@@ -137,7 +130,6 @@ const ContactPage = () => {
             )}
           </div>
 
-          {/* Submit Button */}
           <button
             type="submit"
             className="w-full bg-yellow-500 text-white font-semibold p-3 rounded-lg hover:bg-yellow-600 transition"

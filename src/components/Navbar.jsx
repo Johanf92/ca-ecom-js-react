@@ -1,8 +1,16 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom"; // Import Link for navigation
-import { FaShoppingCart } from "react-icons/fa"; // Import FontAwesome cart icon
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
 
 export const Navbar = ({ menuOpen, setMenuOpen }) => {
+  const [cartCount, setCartCount] = useState(0);
+
+  useEffect(() => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+    setCartCount(totalItems);
+  }, []);
+
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
   }, [menuOpen]);
@@ -23,12 +31,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
             >
               Home
             </Link>
-            <Link
-              to="/products"
-              className="text-yellow-300 hover:text-white transition-colors"
-            >
-              Products
-            </Link>
+
             <Link
               to="/contact"
               className="text-yellow-300 hover:text-white transition-colors"
@@ -43,7 +46,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
             >
               <FaShoppingCart className="text-2xl" />
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full px-1">
-                0
+                {cartCount}
               </span>
             </Link>
           </div>
