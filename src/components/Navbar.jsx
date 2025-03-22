@@ -23,7 +23,6 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
             Johan's<span className="text-yellow-500">.Ecom</span>
           </Link>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <Link
               to="/"

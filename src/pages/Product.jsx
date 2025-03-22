@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const BASE_URL = "https://v2.api.noroff.dev/online-shop/";
 
@@ -43,7 +43,6 @@ function Product() {
       quantity,
     };
 
-    // Check if item is already in the cart
     const existingItemIndex = cart.findIndex(
       (cartItem) => cartItem.id === product.id
     );
@@ -78,7 +77,6 @@ function Product() {
           />
         </div>
 
-        {/* Product Details */}
         <div className="flex flex-col">
           <h1 className="text-3xl font-bold">{product.title}</h1>
           <p className="text-gray-700 mt-2">{product.description}</p>
@@ -124,6 +122,13 @@ function Product() {
           {cartMessage && (
             <p className="mt-2 text-green-500 font-semibold">{cartMessage}</p>
           )}
+
+          <Link
+            to="/"
+            className="mt-4 font-bold cursor-pointer text-center hover:text-yellow-500 transition"
+          >
+            Return to Homepage
+          </Link>
 
           <h3 className="text-xl font-semibold mt-6">Reviews:</h3>
           {product.reviews.length > 0 ? (

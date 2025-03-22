@@ -57,6 +57,12 @@ function Checkout() {
           <button className="mt-6 w-full bg-yellow-500 text-white py-3 rounded-lg hover:bg-yellow-600 transition cursor-pointer">
             Proceed to Payment
           </button>
+          <Link
+            to="/"
+            className="mt-4 font-bold cursor-pointer text-center hover:text-yellow-500 transition block text-lg"
+          >
+            Return to Homepage
+          </Link>
         </div>
       )}
     </div>
