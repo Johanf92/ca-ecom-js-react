@@ -22,7 +22,7 @@ function Checkout() {
 
   return (
     <div className="container mx-auto p-4 min-h-screen">
-      <h1 className="text-3xl font-bold">Checkout</h1>
+      <h1 className="text-3xl font-bold text-center mt-6 mb-8">Checkout:</h1>
 
       {cartItems.length === 0 ? (
         <p className="mt-4">Your cart is empty!</p>
@@ -40,7 +40,7 @@ function Checkout() {
                   </span>
                   <button
                     onClick={() => handleRemoveFromCart(item.id)}
-                    className="text-red-500 hover:text-red-700"
+                    className="text-red-500 hover:text-red-700 cursor-pointer"
                   >
                     Remove
                   </button>
@@ -54,7 +54,7 @@ function Checkout() {
             <span className="font-bold">${totalAmount.toFixed(2)}</span>
           </div>
 
-          <button className="mt-6 w-full bg-yellow-500 text-white py-3 rounded-lg hover:bg-yellow-600 transition">
+          <button className="mt-6 w-full bg-yellow-500 text-white py-3 rounded-lg hover:bg-yellow-600 transition cursor-pointer">
             Proceed to Payment
           </button>
         </div>

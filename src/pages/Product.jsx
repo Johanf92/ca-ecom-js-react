@@ -56,7 +56,6 @@ function Product() {
     localStorage.setItem("cart", JSON.stringify(cart));
     setCartMessage(`${quantity} x ${product.title} added to cart!`);
 
-    // Hide message after 3 seconds
     setTimeout(() => setCartMessage(""), 3000);
   };
 
@@ -71,7 +70,6 @@ function Product() {
   return (
     <div className="container mx-auto p-4 min-h-screen flex items-center">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center w-full">
-        {/* Product Image */}
         <div className="flex justify-center">
           <img
             src={product.image.url}
@@ -95,11 +93,10 @@ function Product() {
           </p>
           <p className="mt-2">Rating: ⭐ {product.rating}/5</p>
 
-          {/* Quantity Selector & Add to Cart */}
           <div className="mt-4 flex items-center space-x-4">
             <button
               onClick={() => handleQuantityChange(-1)}
-              className="px-3 py-2 bg-gray-200 text-gray-700 rounded-lg"
+              className="px-3 py-2 bg-gray-200 text-gray-700 rounded-lg cursor-pointer"
             >
               -
             </button>
@@ -111,7 +108,7 @@ function Product() {
             />
             <button
               onClick={() => handleQuantityChange(1)}
-              className="px-3 py-2 bg-gray-200 text-gray-700 rounded-lg"
+              className="px-3 py-2 bg-gray-200 text-gray-700 rounded-lg cursor-pointer"
             >
               +
             </button>
@@ -119,17 +116,15 @@ function Product() {
 
           <button
             onClick={handleAddToCart}
-            className="mt-4 w-full bg-yellow-500 text-white font-semibold py-3 rounded-lg hover:bg-yellow-600 transition"
+            className="mt-4 w-full bg-yellow-500 text-white font-semibold py-3 rounded-lg hover:bg-yellow-600 transition cursor-pointer"
           >
             Add to Cart
           </button>
 
-          {/* Cart Message */}
           {cartMessage && (
             <p className="mt-2 text-green-500 font-semibold">{cartMessage}</p>
           )}
 
-          {/* Reviews Section */}
           <h3 className="text-xl font-semibold mt-6">Reviews:</h3>
           {product.reviews.length > 0 ? (
             <ul className="mt-2 space-y-2">

@@ -47,17 +47,15 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
-      <div className="max-w-2xl w-full bg-white shadow-lg rounded-lg p-6">
-        <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">
-          Contact Us
-        </h2>
+    <div className="min-h-screen flex items-center justify-center p-4">
+      <div
+        className="max-w-2xl w-full shadow-lg rounded-lg p-6 bg-neutral-100
+"
+      >
+        <h2 className="text-2xl font-bold text-center mb-6">Contact Us</h2>
         <form onSubmit={onFormSubmit} className="space-y-4">
           <div>
-            <label
-              htmlFor="fullName"
-              className="block text-gray-700 font-semibold"
-            >
+            <label htmlFor="fullName" className="block font-semibold">
               Full Name
             </label>
             <input
@@ -65,7 +63,7 @@ const ContactPage = () => {
               name="fullName"
               value={formData.fullName}
               onChange={onInputChange}
-              className="w-full p-3 border border-gray-400 rounded-lg text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="w-full p-3 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
               placeholder="Enter your full name"
             />
             {errors.fullName && (
@@ -74,10 +72,7 @@ const ContactPage = () => {
           </div>
 
           <div>
-            <label
-              htmlFor="subject"
-              className="block text-gray-700 font-semibold"
-            >
+            <label htmlFor="subject" className="block font-semibold">
               Subject
             </label>
             <input
@@ -85,7 +80,7 @@ const ContactPage = () => {
               name="subject"
               value={formData.subject}
               onChange={onInputChange}
-              className="w-full p-3 border border-gray-400 rounded-lg text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="w-full p-3 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
               placeholder="Enter subject"
             />
             {errors.subject && (
@@ -94,10 +89,7 @@ const ContactPage = () => {
           </div>
 
           <div>
-            <label
-              htmlFor="email"
-              className="block text-gray-700 font-semibold"
-            >
+            <label htmlFor="email" className="block font-semibold">
               Email
             </label>
             <input
@@ -105,7 +97,7 @@ const ContactPage = () => {
               name="email"
               value={formData.email}
               onChange={onInputChange}
-              className="w-full p-3 border border-gray-400 rounded-lg text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="w-full p-3 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
               placeholder="Enter your email"
             />
             {errors.email && (
@@ -114,7 +106,7 @@ const ContactPage = () => {
           </div>
 
           <div>
-            <label htmlFor="body" className="block text-gray-700 font-semibold">
+            <label htmlFor="body" className="block font-semibold">
               Message
             </label>
             <textarea
@@ -122,7 +114,7 @@ const ContactPage = () => {
               rows="4"
               value={formData.body}
               onChange={onInputChange}
-              className="w-full p-3 border border-gray-400 rounded-lg text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="w-full p-3 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
               placeholder="Enter your message"
             />
             {errors.body && (
@@ -132,7 +124,7 @@ const ContactPage = () => {
 
           <button
             type="submit"
-            className="w-full bg-yellow-500 text-white font-semibold p-3 rounded-lg hover:bg-yellow-600 transition"
+            className="w-full bg-yellow-500 text-white font-semibold p-3 rounded-lg hover:bg-yellow-600 transition cursor-pointer"
           >
             Submit
           </button>

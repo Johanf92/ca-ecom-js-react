@@ -4,7 +4,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Space Grotesk", sans-serif; /*CHANGE*/
-  background: #090808e2;
-  color: #fff;
+  font-family: "Space Grotesk", sans-serif;
+  background: #f0f0e1;
+  color: #292828;
 }

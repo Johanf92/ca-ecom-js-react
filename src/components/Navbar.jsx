@@ -19,9 +19,9 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
     <nav className="fixed top-0 w-full z-40 bg-[rgba(10,10,10,0.8)] backdrop-blur-lg border-b border-white-10 shadow-lg">
       <div className="max-w-5xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <a href="#home" className="font-mono text-xl font-bold text-white">
+          <Link to="/" className="font-mono text-xl font-bold text-white">
             Johan's<span className="text-yellow-500">.Ecom</span>
-          </a>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
@@ -39,7 +39,6 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
               Contact
             </Link>
 
-            {/* Shopping Cart Icon */}
             <Link
               to="/cart"
               className="relative text-yellow-300 hover:text-white"
@@ -51,7 +50,6 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
             </Link>
           </div>
 
-          {/* Mobile Menu Icon */}
           <div
             className="w-7 h-5 relative cursor-pointer z-40 md:hidden"
             onClick={() => setMenuOpen((prev) => !prev)}

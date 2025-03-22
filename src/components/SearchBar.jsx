@@ -30,7 +30,7 @@ function SearchBar({ products, setFilteredProducts }) {
         placeholder="Search for a product..."
         value={searchTerm}
         onChange={handleSearch}
-        className="w-full p-2 border rounded-lg"
+        className="w-full p-2 border rounded-lg bg-neutral-100"
       />
       {searchTerm && (
         <ul className="absolute bg-white border w-full mt-1 rounded-lg shadow-lg">
