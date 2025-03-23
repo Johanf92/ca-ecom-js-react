@@ -102,7 +102,7 @@ function Product() {
               type="number"
               value={quantity}
               onChange={(e) => setQuantity(Math.max(1, Number(e.target.value)))}
-              className="w-12 text-center border rounded-lg"
+              className="w-12 text-center border rounded-lg bg-neutral-100"
             />
             <button
               onClick={() => handleQuantityChange(1)}

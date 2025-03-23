@@ -17,9 +17,9 @@ function Checkout() {
   };
 
   const handleCheckout = () => {
-    localStorage.removeItem("cart"); // Clear cart
-    setCartItems([]); // Update state
-    navigate("/checkout-success"); // Navigate to success page
+    localStorage.removeItem("cart");
+    setCartItems([]);
+    navigate("/checkout-success");
   };
 
   const totalAmount = cartItems.reduce(
@@ -32,22 +32,34 @@ function Checkout() {
       <h1 className="text-3xl font-bold text-center mt-6 mb-8">Checkout</h1>
 
       {cartItems.length === 0 ? (
-        <p className="mt-4 text-center">Your cart is empty!</p>
+        <div className="text-center">
+          <p className="text-lg text-gray-700">Your cart is empty!</p>
+          <Link
+            to="/"
+            className="mt-4 inline-block font-bold text-lg text-yellow-500 hover:text-yellow-600 transition"
+          >
+            Go back to shopping
+          </Link>
+        </div>
       ) : (
         <div>
           <ul className="space-y-4 mt-4">
             {cartItems.map((item) => (
-              <li key={item.id} className="border-b py-2">
-                <div className="flex justify-between items-center">
-                  <span>
-                    {item.title} x {item.quantity}
-                  </span>
-                  <span className="font-bold">
+              <li
+                key={item.id}
+                className="flex justify-between items-center border-b py-4"
+              >
+                <div className="flex-1">
+                  <span className="text-lg font-semibold">{item.title}</span>
+                  <div className="text-sm text-gray-500">x {item.quantity}</div>
+                </div>
+                <div className="text-right">
+                  <span className="text-lg font-semibold text-gray-800">
                     ${(item.price * item.quantity).toFixed(2)}
                   </span>
                   <button
                     onClick={() => handleRemoveFromCart(item.id)}
-                    className="text-red-500 hover:text-red-700 cursor-pointer"
+                    className="text-red-500 hover:text-red-700 text-sm ml-4"
                   >
                     Remove
                   </button>
@@ -56,21 +68,23 @@ function Checkout() {
             ))}
           </ul>
 
-          <div className="mt-4 flex justify-between">
-            <span className="font-semibold">Total:</span>
-            <span className="font-bold">${totalAmount.toFixed(2)}</span>
+          <div className="mt-6 flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow-md">
+            <span className="font-semibold text-xl">Total:</span>
+            <span className="font-bold text-xl text-green-600">
+              ${totalAmount.toFixed(2)}
+            </span>
           </div>
 
           <button
             onClick={handleCheckout}
-            className="mt-6 w-full bg-yellow-500 text-white py-3 rounded-lg hover:bg-yellow-600 transition cursor-pointer"
+            className="mt-6 w-full bg-yellow-500 text-white font-semibold py-3 rounded-lg hover:bg-yellow-600 transition cursor-pointer"
           >
             Proceed to Payment
           </button>
 
           <Link
             to="/"
-            className="mt-4 font-bold cursor-pointer text-center hover:text-yellow-500 transition block text-lg"
+            className="mt-4 block text-center font-bold text-lg cursor-pointer hover:text-yellow-500 transition"
           >
             Return to Homepage
           </Link>

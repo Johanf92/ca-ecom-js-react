@@ -1,0 +1,35 @@
+[33mcommit 9377006391d8354f2cf5e6e2475ce96fa8a915e3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdesign-rework[m[33m, [m[1;31morigin/design-rework[m[33m, [m[1;32mfixing-cart-icon[m[33m)[m
+Author: Johan <johan.frederic@outlook.com>
+Date:   Sun Mar 23 09:59:06 2025 +0100
+
+    added checkout success page, and fixed some issues with design
+
+[33mcommit 279b120609420db0e9511dea6c8ae16bf1d50f41[m
+Author: Johan <johan.frederic@outlook.com>
+Date:   Sat Mar 22 21:35:44 2025 +0100
+
+    bg color footer, added links to return to main page, and other tweaks
+
+[33mcommit e31a8639e37bb16c82e82ac172213d9f13fa6c8e[m
+Author: Johan <johan.frederic@outlook.com>
+Date:   Sat Mar 22 12:45:32 2025 +0100
+
+    added more styling, and removed some logs, also added pointer to all buttons - still need to fix cart icon, does not always work
+
+[33mcommit f75560098b26fd6b43adfa4241a668ca2eb0ec63[m[33m ([m[1;31morigin/complete[m[33m, [m[1;32mcomplete[m[33m)[m
+Author: Johan <johan.frederic@outlook.com>
+Date:   Thu Mar 20 22:23:24 2025 +0100
+
+    added contenty and functionality to all pages, still need to fix cart icon and styling
+
+[33mcommit 084955c6aa25c8f8ac7b6e1e5a0a80929bd6944d[m[33m ([m[1;31morigin/contactpage[m[33m, [m[1;32mcontactpage[m[33m)[m
+Author: Johan <johan.frederic@outlook.com>
+Date:   Sun Mar 16 10:31:33 2025 +0100
+
+    added contact page and fixed navbar for desktop, also added button for cart on product page
+
+[33mcommit 6c23d20f67f15a1db9d1ec24c7929681f1053a14[m[33m ([m[1;31morigin/ecom-layout[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mecom-layout[m[33m)[m
+Author: Johan Frederic Aas-Haug <91760515+Zarden92@users.noreply.github.com>
+Date:   Mon Mar 10 20:01:19 2025 +0100
+
+    added navigation, footer, layout and made an api call to fetch products.
